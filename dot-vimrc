@@ -1,37 +1,26 @@
+" Pathogen
+execute pathogen#infect()
+
 set ts=4 " tabstop = 4
 set sw=4 " shiftwidth = 4
 set et " expandtab
 set ai " autoindent
 set sta " smarttab
 set sm " showmatch
-set wrap
-set linebreak
-set secure 
-" set font to monaco
-set guifont=Monaco\ 10
+
+" Set font to monaco
+set guifont=Monaco\ 8
 set bg=dark
 set t_Co=256
-"enable syntax highlighting
+
+" Enable syntax highlighting
 syntax on
 colorscheme molokai
-" line numbers
+
 set number
 set cursorline 
 
-"" for no arrow keys
-inoremap <Left> <NOP>
-inoremap <Right> <NOP>
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-
-"""" FOR VIM LATEX
-" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
 
-" OPTIONAL: This enables automatic indentation as you type.
 filetype indent on
 

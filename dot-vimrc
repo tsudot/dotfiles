@@ -1,4 +1,3 @@
-" Pathogen
 execute pathogen#infect()
 
 set ts=4 " tabstop = 4
@@ -7,20 +6,43 @@ set et " expandtab
 set ai " autoindent
 set sta " smarttab
 set sm " showmatch
-
-" Set font to monaco
-set guifont=Monaco\ 8
+set wrap
+set linebreak
+set secure 
+" set font to monaco
+set guifont=Monaco\ 10
 set bg=dark
 set t_Co=256
-
-" Enable syntax highlighting
+"enable syntax highlighting
 syntax on
 colorscheme molokai
 
+" line numbers
 set number
 set cursorline 
 
 filetype plugin on
 
+" OPTIONAL: This enables automatic indentation as you type.
 filetype indent on
 
+set undodir=$HOME/.vim/undo
+set undofile
+
+" NerdTree
+map <C-n> :NERDTreeToggle<CR>
+
+" Close window if only nerdtree is open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Open NERDTree on startup if no files are selected
+autocmd vimenter * if !argc() | NERDTree | endif
+
+" NerdTree Toggle
+nnoremap <C-e> :NERDTreeToggle<CR>
+
+" Ignore unused imports pyflakes - pymode
+let g:pymode_lint_ignore = "W0611"
+
+" Fix for backspace
+set backspace=indent,eol,start

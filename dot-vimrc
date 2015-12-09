@@ -48,7 +48,7 @@ map <C-Tab> :bnext<CR>
 map <C-S-Tab> :bprev<CR>
 
 " Ignore unused imports pyflakes - pymode
-" let g:pymode_lint_ignore = "W0611"
+let g:pymode_lint_ignore = "W0611"
 
 " Fix for backspace
 set backspace=indent,eol,start
@@ -80,3 +80,5 @@ nmap <C-e> :TagbarToggle<CR>
 " Buffer switching
 nnoremap <C-x> :bnext<CR>
 nnoremap <C-z> :bprevious<CR>
+
+let g:notes_directories = ['/opt/documents']

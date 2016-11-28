@@ -12,7 +12,7 @@ set wrap
 set linebreak
 set secure
 " set font to monaco
-set guifont=Monaco\ 10
+set guifont=Monaco\ 15
 set bg=dark
 set t_Co=256
 "enable syntax highlighting
@@ -48,7 +48,7 @@ map <C-Tab> :bnext<CR>
 map <C-S-Tab> :bprev<CR>
 
 " Ignore unused imports pyflakes - pymode
-let g:pymode_lint_ignore = "W0611"
+" let g:pymode_lint_ignore = "W0611"
 
 " Fix for backspace
 set backspace=indent,eol,start
@@ -81,4 +81,5 @@ nmap <C-e> :TagbarToggle<CR>
 nnoremap <C-x> :bnext<CR>
 nnoremap <C-z> :bprevious<CR>
 
-let g:notes_directories = ['/opt/documents']
+" flake8
+autocmd FileType python map <buffer> <C-T> :call Flake8()<CR>
